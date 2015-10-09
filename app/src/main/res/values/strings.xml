@@ -1,0 +1,141 @@
+<resources>
+
+    <string name="app_name">Remind Me</string>
+    <string name="action_settings">Settings</string>
+    <string name="drawer_open">open drawer</string>
+    <string name="drawer_close">close drawer</string>
+
+    <string-array name="drawer_list_item">
+        <item>Summary</item>
+        <item>Spends</item>
+        <item>Notification</item>
+        <item>Bills</item>
+    </string-array>
+
+    <string-array name="expandable_list_group_item">
+
+        <item>Credit</item>
+        <item>Spends</item>
+        <item>Debit</item>
+
+    </string-array>
+
+    <string-array name="regex_message_list">
+
+        <item>(Your\saccount\s[0-9]{3}.{4}[0-9]{4}\shas\sbeen\sdebited\son\s[0-9]{2}.[0-9]{2}.[0-9]{4}\sby\sINR\s[\d,\,]*\.[0-9]{2}\stowards\sCredit\scard\srepayment\.Available\sBalance.INR\s[\d,\,]*\.[0-9]{2})</item>
+        <item>(?i)Thank you\\s.*HDFC Bank DEBIT.*ending\\s([0-9]{4})\\sfor\\sRs.\\s*(\\d*\\.\\d{2})\\s(?:towards\\s)?(.*)in\\s(.*)at\\s(.*)\\son\\s([0-9-:]*).*</item>
+        <item>(Rs\.[\d,\,]*\.[0-9]{2}\swas\swithdrawn\susing\syour\sHDFC\sBank\sCard\sending\s[0-9]{4}\son\s[0-9]{4}.[0-9]{2}.[0-9]{2}:[0-9]{2}:[0-9]{2}:[0-9]{2}\sat\s.*\.\sAvl\sbal: Rs\.[\d,\,]*\.[0-9]{2})</item>
+        <item>(?i)Rs.\\s*(\\d*.\\d{2})\\s.*HDFCBank\\sCREDIT.*ending\\s*([0-9]*)\\son\\s([0-9:-]*)\\sat\\s(.*)\\.Avl</item>
+        <item>(?i)Rs.([\\d,\\,]*\\.\\d{2})\\swas withdrawn using your HDFC Bank Card ending\\s*([\\d]*)\\son\\s([0-9:-]*)\\sat\\s(.*)\\.Avl</item>
+        <item>(?i)Stmt.*ending\\s(\\d{4}).*Min.*Rs\\s(\\d*(?:.\\d{1,2})?).*Total.*Rs\\s(\\d*(?:.\\d{1,2})?).*((?:\\d{2}\\/[a-z]*\\/\\d{4})|(?:immediately))</item>
+        <item>(?i)Stmt.*ending\\s(\\d{4}).*Total Due Rs (\\d*(?:.\\d{1,2})?).*((?:immediately)|(?:\\d{2}\\/[a-z]*\\/\\d{4}))</item>
+        <item>(?i)An.*rs.([\\d,\\,]*\\.\\d{2})\\s.*debited.*X{4,12}(\\d{4})\\sfor\\s(.*)\\s(?:payment|txn).*\\bNetbanking</item>
+        <item>(?i)Your payment for (.*) bill - account (.*) for Rs\\s?([\\d,\\,]*(?:.\\d{2})?).*successfully.*</item>
+        <item>Your unsuccessful (.*) on (.*) Card ending (\\d{4}) of Rs.\\s?([\\d,\\,]*(?:.\\d{1,2})?) at location (.*) on\\s([0-9-:]*) is reversed</item>
+        <item>(?i)credit card ending (\\d{4}) for (?:INR|Rs)[\\.,\\s]*([\\d,]*\\.?\\d{0,2}).* at (.*) on (.*)\\.</item>
+        <item>(?i)Rs\\s([\\d,\\,]*(?:.\\d{1,2})?).*[\\d,X]{12}(\\d{4}) on (\\d{2}\\-[a-z]*\\-\\d{2}) at (.*).</item>
+        <item>(?i)\\*{12}(\\d{4}).*Total Due Rs.\\s?([\\d,\\,]*(?:.\\d{1,2})?).*Payment due\\s?((?:immediately)|(?:\\d{2}\\-[a-z]*\\-\\d{2}))</item>
+        <item>(?i)debit card.*X+(\\d{4}).*purchase of (?:INR|Rs)[\\.,\\s]*([\\d,]*\\.?\\d{0,2}) at (.*) on ([^\\.]*)</item>
+        <item>(?i)debit card.*X+(\\d{4}).*purchase of (?:INR|Rs)[\\.,\\s]*([\\d,]*\\.?\\d{0,2}) on (.*) at ([^\\.]*)</item>
+        <item>(?i)(?:INR|Rs)[\\.,\\s]*([\\d,]*\\.?\\d{0,2}).*withdrawn.*ATM .*X+(\\d{4})</item>
+        <item>(?i)Your a\\/c \\d*(\\d{6}) is debited (?:INR|Rs)\\s?(\\d*\\.?\\d{0,2}) on ([\\d,-]* (?:[\\d,:]*)?).*?(?:(?:INR|Rs) (\\d*\\.\\d{2}))? Info: ([^\\/,\\n]*)\\/([^\\/,\\n]*)\\/?([^\\/,\\n]*)\\/?</item>
+        <item>(?i)Dear.*?(?:INR|Rs)[\\.,\\s]?(\\d*\\.?\\d{2}).*?xx(\\d{4}) on ([a-z:0-9:-]*) at (.*)? Avbl.*?(?:INR|Rs)[\\.,\\s]?(\\d*\\.?\\d{2}).*Total.*(?:INR|Rs)[\\.,\\s]?(\\d*\\.?\\d{2})</item>
+        <item>(?i)Credit Card X+(\\d{4}).*(?:INR|Rs)[\\.,\\s]*([\\d,]*\\.?\\d{2}).*due date (\\S*)</item>
+        <item>(?i)Your Credit card.*?xx(\\d{4}) payment of (?:INR|Rs)[\\.,\\s]?(\\d*\\.?\\d{2}).*? is due on ([a-z:0-9:-]*).</item>
+        <item>(?i)A charge.*?(?:INR|Rs)[\\.,\\s]?([\\d,,]*\\.?\\d{2}).*Card No. \\*\\*\\*(\\d{5}) at (.*) on (.*) IST.</item>
+        <item>(?i)Card \\*+(\\d{5}).*total payment (?:of )?(?:INR|Rs)[\\.,\\s]?([\\d,,]*\\.?\\d{2}) is due by ([\\d,\\/]*)</item>
+        <item>(?i)Your Vodafone bill .*\\bRs.(\\d*.\\d{2})\\sdue on\\s([^\\s]*)</item>
+        <item>(?i)Total Amt Due:([\\d,]*\\.\\d{0,2}).*Payment Due Date:(\\d{2}-[a-z]{3}-\\d{2})</item>
+        <item>(?i)Bill.*\\sfor\\sRs.\\s?([\\d,\\,]*(?:.\\d{2})?).*mobile\\s?(\\d{10})?.*Due\\sDate:\\s?([\\d,\\-,A-Z]*)</item>
+        <item>(?i)(?:INR|Rs)[\\.,\\s]*([\\d,]*\\.?\\d{2}).*(\\d{10}) is due on (.*)\\. Please pay</item>
+        <item>(?i)(?:INR|Rs)[\\.,\\s]*([\\d,]*\\.?\\d{1,2}).*due date (.*) to avoid</item>
+        <item>(?i)debit card purchase of (?:INR|Rs)[\\.,\\s]?([\\d,]*\\.?\\d{2}) on (.*). Info.(.*)\\*(.*). Your.*balance is (?:INR|Rs)[\\.,\\s]?([\\d\\,]*\\.?\\d{2})</item>
+        <item>(?i)X+(\\d{4}).*debited.*(?:INR|Rs)[\\.,\\s]?([\\d,]*\\.?\\d{2}) (.*)\\*(.*)\\*([\\d-]{8}).*Bal.*(?:INR|Rs)[\\.,\\s]?([\\d,]*\\.?\\d{2})</item>
+        <item>(?i).*XX(\\d{4}).*debited.*(?:INR|Rs)[\\.,\\s]?([\\d,]*\\.?\\d{2})\\s*on\\s(.*)\\.\\s*Info.(.*)\\. Your.*Bal.*(?:INR|Rs)[\\.,\\s]?([\\d,]*\\.?\\d{2})</item>
+        <item>(?i).*(?:INR|Rs)[\\.,\\s]?([\\d,]*\\.?\\d{2}).*xx(\\d{4}).*at (.*) on (.*?)\\.</item>
+        <item>(?i)(?:INR|Rs)[\\.,\\s]?([\\d,]*\\.?\\d{1,2}).*xxx(\\d{4}) is due.*((?:\\d{2}-\\S{3}-\\d{2})|(?:immediately))</item>
+        <item>(?i)\\d*x+(\\d{4}).*(?:INR|Rs)[\\.,\\s]*?([\\d,]*\\.?\\d{2}).*ATM.*at (.*) with txn</item>
+        <item>(?i)\\d*x+(\\d{4}).*used at (.*) txn.*(?:INR|Rs)[\\.,\\s]*?([\\d,]*\\.?\\d{2})</item>
+        <item>(?i)\\d*x+(\\d{4}).*(?:INR|Rs)[\\.,\\s]*?([\\d,]*\\.?\\d{2}).*POS.*at (.*) txn</item>
+        <item>(?i)(?:INR|Rs)[\\.\\s]*([\\d,]*\\.?\\d{1,2}).*XX(\\d{4}) at (.*) on (.*).</item>
+        <item>(?i)(?:INR|Rs)[\\.,\\s]?([\\d,]*\\.?\\d{2}),.*X+(\\d{4}).*due on (\\d{2}-\\S{3}-\\d{2})</item>
+        <item>(?i)\\*+(\\d{6}).*(?:INR|Rs)[\\.\\s]*([\\d,]*\\.?\\d{1,2}) towards.*(Debit Card Purchase|ATM|Internet Transfer)</item>
+        <item>(?i)XX(\\d{4}).*(?:INR|Rs)[\\.,\\s]*([\\d,]*\\.?\\d{0,2}) on (.*) at (.*) is approved</item>
+        <item>(?i)X+(\\d{4}).*due (.*) will.*(?:INR|Rs)[\\.,\\s]*([\\d,]*\\.?\\d{2}) and (?:INR|Rs)[\\.,\\s]*([\\d,]*\\.?\\d{2})</item>
+        <item>(?i)Txn of (?:INR|Rs)[\\.,\\s]*([\\d,]*\\.?\\d{2}) made on .*X+(\\d{4}) on (.*) at (.*)\\.Combined</item>
+        <item>(?i)Cash withdrawal of (?:INR|Rs)[\\.,\\s]*([\\d,]*\\.?\\d{2}) made on .*X+(\\d{4}) on (.*) at (.*)\\.Combined</item>
+        <item>(?i)(?:INR|Rs)[\\.,\\s]*([\\d,]*\\.?\\d{2}) has been made.*x+(\\d{4}) on (.*) at (.*)\\. A</item>
+        <item>(?i)x+(\\d{4}). Total Due (?:INR|Rs)[\\.,\\s]*([\\d,]*\\.?\\d{0,2})\\..*Payment due (\\d{2}-[a-z]{3}-\\d{2,4})</item>
+        <item>(?i)Thank you for using.*X+(\\d{4}).*(?:INR|Rs)[\\.,\\s]*([\\d,]*\\.?\\d{2})[ \\.]</item>
+        <item>(?i)(?:INR|Rs)[\\.,\\s]*([\\d,]*\\.?\\d{2}).* Due date: (.*), </item>
+        <item>(?i)XX(\\d{4}) is debited on (.*) by (?:INR|Rs)[\\.,\\s]*([\\d,]*\\.?\\d{0,2}) towards (.*)\\. Avl</item>
+        <item>(?i)card x+(\\d{4}) is used for (?:INR|Rs)[\\.,\\s]*([\\d,]*\\.?\\d{2}).*at (.*)\\. Call</item>
+        <item>(?i)card ending x*(\\d{4}).*Payment due on(.*), Total payment due (?:INR|Rs)[\\.,\\s]*([\\d,]*\\.?\\d{2})</item>
+        <item>(?i)A\\/c [a-z]+(\\d{4}).*(?:INR|Rs)[\\.,\\s]*([\\d,]*\\.?\\d{2}); ATM WDL</item>
+        <item>(?i)A\\/c [a-z]+(\\d{4}).*(?:INR|Rs)[\\.,\\s]*([\\d,]*\\.?\\d{2}); Card txn:.*\\/(.*)\\. ?A\\/c</item>
+        <item>(?i)A\\/c [a-z]+\\d(\\d{4}) debited for (?:INR|Rs)[\\.,\\s]*([\\d,]*\\.?\\d{2}) through Net Banking</item>
+        <item>(?i)(?:INR|Rs)[\\.,\\s]*([\\d,]*\\.?\\d{0,2}) debited .*XX(\\d{4}).*(ATD|PCD):.*:.*:(.*) Tot</item>
+
+    </string-array>
+
+    <string-array name="time_format_list">
+
+        <item>yyyy-MM-dd:HH:mm:ss</item>
+        <item>dd-MM-yyyy HH:mm:ss</item>
+
+        <item>dd/MM/yy HH:mm</item>
+
+        <item>dd/MMM/yyyy</item>
+        <item>dd/MM/yy</item>
+        <item>dd/MM/yyyy</item>
+
+        <item>dd-MMM-yy</item>
+        <item>yyyy-MM-dd</item>
+        <item>dd-MMM-yyyy</item>
+        <item>dd-MM-yyyy</item>
+        <item>dd-MM-yy</item>
+        <item>dd-MMM</item>
+
+        <item>dd MMM</item>
+        <item>dd MMM yy</item>
+
+        <item>ddMMMyy</item>
+
+        <item>dd.MM.yyyy</item>
+
+    </string-array>
+
+    <string-array name="regex_times_list">
+
+        <item>([0-9]{4})[- /.]([0-9]{2})[- /.]([0-9]{2})</item>
+        <item>([0-9]{2})[- /.]([0-9]{2})[- /.]([0-9]{4})</item>
+        <item>([0-9]{2})[- /.]([0-9]{3})[- /.]([0-9]{2})</item>
+        <item>([0-9]{2})[- /.]([0-9]{3})[- /.]([0-9]{4})</item>
+        <item>([0-9]{2})[- /.]([0-9]{2})[- /.]([0-9]{2})</item>
+
+        <item>([0-9]{4})-([0-9]{2})-([0-9]{2}):([0-9]{2}):([0-9]{2}):([0-9]{2})</item>
+        <item>([0-9]{2})-([0-9]{2})-([0-9]{4})\s([0-9]{2}):([0-9]{2}):([0-9]{2})</item>
+
+        <item>([0-9]{2})/([0-9]{2})/([0-9]{2})\s([0-9]{2}):([0-9]{2})</item>
+
+        <item>([0-9]{2})/([0-9]{3})/([0-9]{4})</item>
+        <item>([0-9]{2})/([0-9]{2})/([0-9]{2})</item>
+        <item>([0-9]{2})/([0-9]{2})/([0-9]{4})</item>
+
+        <item>([0-9]{2})-([0-9]{3})-([0-9]{2})</item>
+        <item>([0-9]{4})-([0-9]{2})-([0-9]{2})</item>
+        <item>([0-9]{2})-([0-9]{3})-([0-9]{4})</item>
+        <item>([0-9]{2})-([0-9]{2})-([0-9]{4})</item>
+        <item>([0-9]{2})-([0-9]{2})-([0-9]{2})</item>
+        <item>([0-9]{2})-([0-9]{3})</item>
+
+        <item>([0-9]{2})\s([0-9]{3})</item>
+        <item>([0-9]{2})\s([0-9]{3})\s([0-9]{2})</item>
+
+        <item>([0-9]{2})\S([0-9]{3})\S([0-9]{2})</item>
+
+        <item>([0-9]{2}).([0-9]{2}).([0-9]{4})</item>
+
+    </string-array>
+
+</resources>
